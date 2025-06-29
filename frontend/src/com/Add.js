@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+const baseURL = import.meta.env.VITE_API_URL;
 
 const Add = () => {
 
@@ -10,7 +11,7 @@ const Add = () => {
 
   const add=async()=>{
     console.log (title)
-     await axios.post('http://localhost:4010/data', {title,imageUrl,description,movielink});
+     await axios.post(`${baseURL}/data`, {title,imageUrl,description,movielink});
   }
 
   return (

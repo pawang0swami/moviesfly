@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-
+const baseURL = import.meta.env.VITE_API_URL;
 
 const Singup = () => {
   const [name, setname] = useState("");
@@ -19,7 +19,7 @@ const Singup = () => {
   const save = async() => {
    if(name&&email&&password){
     
-    const r=await axios.post('http://localhost:4010/singup', {name, email, password});
+    const r=await axios.post(`${baseURL}/singup`, {name, email, password});
     localStorage.setItem("user", JSON.stringify(r.data));
 // if (r){nav("/")}
 //  const a=localStorage.getItem("user")
