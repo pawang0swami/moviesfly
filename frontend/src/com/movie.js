@@ -15,7 +15,7 @@ const Movie = () => {
 
 const [d,setd]=useState("")
 
-console.log(d)
+// console.log(d)
 
 const p=useParams()
   
