@@ -9,8 +9,8 @@ const baseURL = "https://moviesflyback-1.onrender.com";
 const Login = () => {
   const nav = useNavigate();
 
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
+  const [email, setemail] = useState();
+  const [password, setpassword] = useState();
 
   // const getp = async () => {
   //    const res = await axios.post("http://localhost:4010/login",{email,password});
