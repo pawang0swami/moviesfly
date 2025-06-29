@@ -36,7 +36,7 @@ const Edit = () => {
   };
   const del = async () => {
     await axios.delete(`${baseURL}/delete/` + p.id);
-    alert("Movie updated successfully!");
+    alert("Delete successfully!");
   };
  
 
