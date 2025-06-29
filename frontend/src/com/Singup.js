@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-const baseURL = import.meta.env.VITE_API_URL;
+// const baseURL = import.meta.env.VITE_API_URL;
+const baseURL = "https://moviesflyback-1.onrender.com";
+
 
 
 const Singup = () => {

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-const baseURL = import.meta.env.VITE_API_URL;
+// const baseURL = import.meta.env.VITE_API_URL;
+const baseURL = "https://moviesflyback-1.onrender.com";
+
 
 const Login = () => {
   const nav = useNavigate();

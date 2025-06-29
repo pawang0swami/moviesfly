@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-const baseURL = import.meta.env.VITE_API_URL;
+// const baseURL = import.meta.env.VITE_API_URL;
+const baseURL = "https://moviesflyback-1.onrender.com";
+
 
 const Movie = () => {
   const [comments, setComments] = useState([]);
