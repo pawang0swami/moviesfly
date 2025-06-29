@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+const baseURL = import.meta.env.VITE_API_URL;
 
 const Movie = () => {
   const [comments, setComments] = useState([]);
@@ -20,7 +21,7 @@ const [d,setd]=useState("")
 const p=useParams()
   
 const abc=async()=>{
- const a= await axios.get("http://localhost:4010/movie/"+p.id)
+ const a= await axios.get(`${baseURL}/movie/`+p.id)
  setd(a.data)
 }
   useEffect(()=>{

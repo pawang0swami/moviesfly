@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+const baseURL = import.meta.env.VITE_API_URL;
 
 const Home = () => {
 const [da, setdata] = useState([]);
 const nav=useNavigate()
 
   const getp = async () => {
-    const res = await axios.get("http://localhost:4010/data");
+    const res = await axios.get(`${baseURL}/data`);
     setdata(res.data);
   };
 
