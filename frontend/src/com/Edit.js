@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-const baseURL = import.meta.env.VITE_API_URL;
 
 const Edit = () => {
   const [title, settitle] = useState("");
@@ -13,7 +12,7 @@ const Edit = () => {
 
   useEffect(() => {
     const w = async () => {
-      const a = await axios.get(`${baseURL}/edit/` + p.id);
+      const a = await axios.get("http://localhost:4010/edit/" + p.id);
       settitle(a.data.title);
       setimageUrl(a.data.imageUrl);
       setdescription(a.data.description);
@@ -23,7 +22,7 @@ const Edit = () => {
   }, [p.id]);
 
   const edit = async () => {
-    await axios.put(`${baseURL}/edit/` + p.id, {
+    await axios.put("http://localhost:4010/edit/" + p.id, {
       title,
       imageUrl,
       description,
@@ -33,7 +32,7 @@ const Edit = () => {
     alert("Movie updated successfully!");
   };
   const del = async () => {
-    await axios.delete(`${baseURL}/delect` + p.id);
+    await axios.delete("http://localhost:4010/delete/" + p.id);
     alert("Movie updated successfully!");
   };
  

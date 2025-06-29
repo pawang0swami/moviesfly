@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-const baseURL = import.meta.env.VITE_API_URL;
 
 const Login = () => {
   const nav = useNavigate();
@@ -19,7 +18,7 @@ const Login = () => {
   //   };
 
   const abc = async () => {
-    const res = await axios.post(`${baseURL}/login`, {email,  password, });
+    const res = await axios.post("http://localhost:4010/login", {email,  password, });
     if (res) { nav("/")}
     else { alert("Invalid email or password!");}
 
