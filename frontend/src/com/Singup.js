@@ -39,7 +39,7 @@ const Singup = () => {
       <div class="bg-black">
  
         <div class="max-w-sm mx-auto pt-45 h-screen  ">
-          {loading? ( <div className="flex items-center justify-center">
+          {loading? ( <div className="flex items-center justify-center pt-20">
             <RingLoader
   color="#ff0000"
   cssOverride={{}}

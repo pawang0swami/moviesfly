@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+// import { RingLoader } from "react-spinners"
 // const baseURL = import.meta.env.VITE_API_URL;
 const baseURL = "https://moviesflyback-1.onrender.com";
 
@@ -11,6 +12,7 @@ const Login = () => {
 
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  // const [l,setl]=useState(false)
 
   // const getp = async () => {
   //    const res = await axios.post("http://localhost:4010/login",{email,password});
@@ -21,12 +23,12 @@ const Login = () => {
   //   };
 
   const abc = async () => {
-    const res = await axios.post(`${baseURL}/login`, {email,  password, });
+
+    let res = await axios.post(`${baseURL}/login`, {email,  password, });
     if (res) { nav("/")}
     else { alert("Invalid email or password!");}
-
-
     localStorage.setItem("user", JSON.stringify(res.data));
+
   };
 
   useEffect(() => {
@@ -37,6 +39,16 @@ const Login = () => {
   return (
     <div className="bg-black  ">
       <form class="max-w-sm mx-auto h-screen pt-45">
+        {/* {l?( <div className="flex items-center justify-center pt-20">
+                    <RingLoader
+          color="#ff0000"
+          cssOverride={{}}
+          loading
+          size={60}
+          speedMultiplier={3}
+          className=""
+        /></div>):( */}
+        <div>
         <div class="mb-5">
           <label
             for="email"
@@ -78,6 +90,8 @@ const Login = () => {
         >
           Submit
         </button>
+        </div>
+        {/* )} */}
       </form>
     </div>
   );
