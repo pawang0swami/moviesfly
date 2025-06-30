@@ -11,10 +11,10 @@ const Footer = () => {
           <a href="/" className="hover:text-teal-400 transition">
             Home
           </a>
-          <a href="/about" className="hover:text-teal-400 transition">
+          <a href="https://github.com/pawang0swami/moviesfly" className="hover:text-teal-400 transition">
             About
           </a>
-          <a href="/contact" className="hover:text-teal-400 transition">
+          <a href="https://github.com/pawang0swami/moviesfly" className="hover:text-teal-400 transition">
             Contact
           </a>
         </div>
