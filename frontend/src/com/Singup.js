@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { RingLoader } from "react-spinners"
 // const baseURL = import.meta.env.VITE_API_URL;
 const baseURL = "https://moviesflyback-1.onrender.com";
+
 
 
 
@@ -10,6 +12,8 @@ const Singup = () => {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
 
   const nav=useNavigate()
 
@@ -20,12 +24,10 @@ const Singup = () => {
 
  
   const save = async() => {
-   if(name&&email&&password){
-    
-    const r=await axios.post(`${baseURL}/singup`, {name, email, password});
+   if(name&&email&&password){setLoading(true)
+    let r=await axios.post(`${baseURL}/singup`, {name, email, password});
     localStorage.setItem("user", JSON.stringify(r.data));
 // if (r){nav("/")}
-//  const a=localStorage.getItem("user")
   //  return
     r?nav("/"):console.log("error")
   }}
@@ -35,8 +37,20 @@ const Singup = () => {
   return (
     <div>
       <div class="bg-black">
-        <div class="max-w-sm mx-auto pt-45 h-screen">
-          <div class="mb-5">
+ 
+        <div class="max-w-sm mx-auto pt-45 h-screen  ">
+          {loading? ( <div className="flex items-center justify-center">
+            <RingLoader
+  color="#ff0000"
+  cssOverride={{}}
+  loading
+  size={60}
+  speedMultiplier={3}
+  className=""
+/></div>)
+   :(
+   <div >
+                   <div class="mb-5">
             <label
               for="name"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -94,6 +108,7 @@ const Singup = () => {
           >
             Submit
           </button>
+        </div>)}
         </div>
       </div>
     </div>
